@@ -1,0 +1,11 @@
+# Rahasia
+.env
+
+# Runtime
+state.json
+state.tmp
+__pycache__/
+*.pyc
+.venv/
+venv/
+logs/

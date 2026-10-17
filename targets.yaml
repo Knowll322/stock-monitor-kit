@@ -1,0 +1,38 @@
+# Daftar target monitoring. Tambah/sesuaikan per order klien.
+#
+# Tiap target:
+#   name        : nama unik (muncul di notifikasi)
+#   url         : halaman yang dipantau
+#   fetch_mode  : requests | playwright  (override DEFAULT_FETCH_MODE)
+#   interval_seconds : jarak cek (dengan jitter otomatis ±20%)
+#   extract     : cara ambil nilai dari halaman
+#       type : text | attribute | count
+#       selector : CSS selector
+#       attribute : (opsional) nama attribute jika type=attribute
+#   condition   : kapan notifikasi dikirim
+#       type : in_stock | price_below | price_change
+#       threshold : (price_below) ambang harga
+#
+# Contoh di bawah memakai books.toscrape.com (situs demo publik, aman untuk testing).
+
+targets:
+  - name: "Demo Buku Murah"
+    url: "https://books.toscrape.com/catalogue/page-1.html"
+    fetch_mode: requests
+    interval_seconds: 300
+    extract:
+      type: count
+      selector: "article.product_pod"
+    condition:
+      type: in_stock
+
+  - name: "Demo Harga Buku"
+    url: "https://books.toscrape.com/catalogue/page-1.html"
+    fetch_mode: requests
+    interval_seconds: 600
+    extract:
+      type: text
+      selector: ".product_price .price_color"
+    condition:
+      type: price_below
+      threshold: 20.0
