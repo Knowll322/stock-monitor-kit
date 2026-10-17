@@ -1,5 +1,5 @@
-# Alexsander LL Bot — demo offline stock monitor: fetch nyata dari books.toscrape.com
-# (situs demo publik), notifikasi dicetak ke layar (tanpa Telegram).
+"""Alexsander LL Bot — demo offline stock monitor: fetch nyata dari books.toscrape.com
+(situs demo publik), notifikasi dicetak ke layar (tanpa Telegram).
 
     python demo.py
 
