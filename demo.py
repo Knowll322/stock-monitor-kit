@@ -1,5 +1,5 @@
-"""Demo offline stock monitor — fetch nyata dari books.toscrape.com (situs demo publik),
-notifikasi dicetak ke layar (tanpa Telegram).
+# Bot Zen — demo offline stock monitor: fetch nyata dari books.toscrape.com
+# (situs demo publik), notifikasi dicetak ke layar (tanpa Telegram).
 
     python demo.py
 
@@ -77,8 +77,8 @@ def demo_cycle(state: StateStore, cycle: int) -> None:
 
 
 def main() -> None:
-    print("STOCK MONITOR KIT — Demo Mode")
-    print("Fetch nyata ke books.toscrape.com, notifikasi simulasi di layar.")
+    print("BOT ZEN — Stock Monitor Kit Demo")
+    print("Fetch nyata ke books.toscrape.com, notifikasi simulasi di layar. | t.me/botzen")
     state = StateStore("state_demo.json")
     for cycle in (1, 2):
         demo_cycle(state, cycle)
